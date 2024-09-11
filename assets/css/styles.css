@@ -425,3 +425,370 @@ a {
   đã đặt biến */
     background: var(--primary);
 }
+
+/* feadback */
+
+.feadback {
+    margin-top: 135px;
+    padding: 96px 0;
+    background: #2e2100;
+}
+
+.feadback .feadback-list {
+    display: flex;
+    /* dùng overflow: hidden
+    để khi phần từ con vượt quá phần tử cha thì mình sẽ ẩn nó 
+    là hidden */
+    overflow: hidden;
+}
+
+.feadback .feadback-item {
+    display: flex;
+    width: 100%;
+    /* dùng  flex-shrink: 0; để nó k giới hạn kích thước
+    của thẻ cha*/
+    flex-shrink: 0;
+}
+
+.feadback-item .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.feadback-item .info .title {
+    margin-top: 18px;
+    color: #f7f7f7;
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.42; /* 141.667% */
+}
+
+.feadback-item .info .desc {
+    margin-top: 4px;
+    color: #bfbcb2;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.86; /* 185.714% */
+}
+.feadback-item .info .dots {
+    display: flex;
+    margin-top: 28px;
+}
+
+.feadback-item .info .dot {
+    margin-right: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #634700;
+    cursor: pointer;
+}
+
+.feadback-item .info .dot.active {
+    background: #ffb900;
+    /* đối với active thì k có nó nhấn được thì
+    dùng cursor: default */
+    cursor: default;
+}
+
+.feadback-item .content {
+    /* độ rộng của width là 776px giới hạn lại 
+    để chữ info tilte được ngang lên */
+    /* tính % lấy độ rộng của content là 770px 
+    chia với độ rộng của main-content 1110px  rồi nhân 100% */
+    width: 66%;
+    margin-left: auto;
+}
+
+.feadback-item .content blockquote {
+    margin-left: 30px;
+    color: #fff;
+    font-size: 2.6rem;
+    font-style: italic;
+    line-height: 1.54; /* 153.846% */
+}
+
+/* Features  */
+
+.features {
+    margin-top: 135px;
+    padding: 65px 0;
+}
+
+.features .body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.features .body .images {
+    display: flex;
+    gap: 0 30px;
+}
+
+.features .images .feature-img {
+    width: 270px;
+    height: 404px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.features .lower {
+    margin-top: 30px;
+}
+
+.features .content {
+    width: 41%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.features .desc {
+    margin-top: 16px;
+    color: #5f5b53;
+    font-size: 1.6rem;
+    line-height: 1.75; /* 175% */
+}
+
+.features .content .cta-btn {
+    margin-top: 32px;
+    min-width: 137px;
+    color: #fff;
+    background: var(--primary);
+}
+
+.features-2 {
+    /* tại vì features trên dưới đã có padding 65px
+    thiết kế thì 200px nên chúng ta sẽ lấy 65+65px trên dưới là padding
+    thì sẽ ra được margin-top: 70px */
+    margin-top: 70px;
+}
+.features-2 .body {
+    flex-direction: row-reverse;
+}
+
+.features-2 .content {
+    /* độ rộng của content nó khác đi nên phải tính lại
+lấy độ rộng của content-2 là 570px / 1170px(main-content) * 100%
+thì sẽ ra đc độ rộng của content-2 49% */
+    width: 49%;
+}
+
+.features-2 .images .feature-img {
+    width: 470px;
+    height: 440px;
+}
+
+/* Blog */
+
+.blog {
+    margin-top: 135px;
+    padding: 96px 0;
+    background: #fffcf4;
+}
+
+.blog .blog-top {
+    text-align: center;
+}
+
+.blog .blog-top .desc {
+    width: 448px;
+    margin: 16px auto;
+    color: #696262;
+    font-size: 1.6rem;
+    line-height: 1.75; /* 175% */
+}
+
+.blog .blog-list {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.blog .item {
+    /* nó k bị nén lại 9 item */
+    flex-shrink: 0;
+    /* mình chia đều 3 ảnh là 33.33% + lại 100% của độ rộng ảnh */
+    /* khi bạn thêm 9 item vào nữa thi phải tính lại
+    lúc này khi flex-shrink thì nó sẽ giữ đúng kích là 33.33% + gap:30px
+    thì nó mất đi đoạn của item cuối cùng khi độ rộng vượt quá blog-list
+    chúng ta lấy gap30px / 3 là 20px sao tính width của item  */
+    width: calc(33.33% - 20px);
+    border-radius: 16px;
+    background: #fff;
+}
+
+.blog .item:hover {
+    box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+}
+
+.blog .item .thumb {
+    /* độ rộng của ảnh mà 33.33% ăn theo */
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 16px 16px 0px 0px;
+}
+
+.blog .item .info {
+    padding: 20px 20px 28px;
+}
+
+.blog .item .date {
+    position: relative;
+    /* lúc này nó sẽ mất đi tính chiếm hết
+    độ rộng k gian của thẻ cha đi */
+    display: inline-flex;
+    padding-bottom: 12px;
+    align-items: center;
+    color: #5f5b53;
+    font-size: 1.4rem;
+    line-height: 1.86;
+}
+/* xử lý dấu chấm tròn nằm đằng trước thì before */
+.blog .item .date::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 4px;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+/* tạo thẻ giả
+dùng để xử thanh gạch có border-radius */
+.blog .item .date::after {
+    /* sử dụng position để cho thanh gạch xuống hàng */
+    position: absolute;
+    /* để cho thanh sát bên trái */
+    left: 0;
+    /* để cho thanh sát bên dưới */
+    bottom: 0;
+    right: -27px;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    border-radius: 0.5px;
+    background: #e2dfda;
+}
+
+.blog .item .title a {
+    display: inline-block;
+    margin: 12px 0 12px;
+    color: #171100;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.75; /* 175% */
+}
+.blog .item .btn {
+    font-size: 1.4rem;
+}
+
+.blog .item .btn:hover {
+    background-color: var(--primary);
+}
+
+.blog .dots {
+    display: flex;
+    /* các phần tử cách nhau */
+    gap: 6px;
+    justify-content: center;
+    margin-top: 38px;
+}
+
+.blog .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #5f5b53;
+    cursor: pointer;
+}
+
+.blog .dot.active {
+    cursor: default;
+    background: var(--primary);
+}
+
+/* Footer */
+
+.footer {
+    padding: 96px 135px 0;
+    background: #2e2100;
+}
+
+.footer .row {
+    display: flex;
+    padding-bottom: 38px;
+    border-bottom: 1px solid #59554b;
+}
+
+.footer .row .column {
+    width: 21.6%;
+}
+
+.footer .row .column:first-child {
+    width: 35%;
+}
+
+.footer .desc {
+    margin-top: 18px;
+    max-width: 267px;
+    color: #bfbcb2;
+    font-size: 1.4rem;
+    line-height: 1.86; /* 185.714% */
+}
+
+.footer .socials {
+    display: flex;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.footer .title {
+    display: inline-block;
+    padding: 0 48px 14px 0;
+    border-bottom: 1px solid #59554b;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.75; /* 175% */
+}
+
+.footer .list {
+    margin-top: 28px;
+}
+
+.footer .list a {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #bfbcb2;
+    font-size: 1.4rem;
+    line-height: 1.86; /* 185.714% */
+}
+.footer .list li:last-child a {
+    margin-bottom: 0;
+}
+
+.footer .list strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.footer .copyright {
+    padding: 28px 0;
+}
+
+.footer .copyright p {
+    color: #807d74;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 1.86; /* 185.714% */
+}
